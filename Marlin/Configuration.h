@@ -90,10 +90,10 @@
  * Bed leveling type (see: https://github.com/JimBrown/MarlinTarantula/wiki/Bed-leveling-types-(EasyConfig))
  * Must choose one of these other than MANUAL if a Z-Probe type is selected.
  */
-//#define TRIPOINT
-//#define LINEAR
+// #define TRIPOINT
+#define LINEAR
 //#define BILINEAR
-#define UBL
+// #define UBL
 // #define MANUAL
 
 /**
@@ -187,8 +187,8 @@
  *       CUSTOM_USER_MENUS for PETG to appear, along with PLA and ABS, under Custom Commands.
  *       PLA and ABS will appear under both Custom Command and Prepare.
  */
-#define Hot_PLA     230
-#define Bed_PLA      40
+#define Hot_PLA     235
+#define Bed_PLA      35
 
 #define Hot_ABS 		230
 #define Bed_ABS 		60
@@ -636,7 +636,7 @@
 #define HEATER_3_MAXTEMP 275
 #define HEATER_4_MAXTEMP 275
 #define HEATER_5_MAXTEMP 275
-#define BED_MAXTEMP 150
+#define BED_MAXTEMP 70
 
 //===========================================================================
 //============================= PID Settings ================================
@@ -1121,7 +1121,7 @@
 #define XY_PROBE_SPEED 8000
 
 // Feedrate (mm/m) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
+#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z / 3
 
 // Feedrate (mm/m) for the "accurate" probe of each point
 #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 3)
@@ -1146,8 +1146,8 @@
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
 #define Z_CLEARANCE_DEPLOY_PROBE    Z_HOMING_HEIGHT // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES  Z_HOMING_HEIGHT // Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE     Z_HOMING_HEIGHT // Z Clearance between multiple probes
+#define Z_CLEARANCE_BETWEEN_PROBES  Z_HOMING_HEIGHT / 2 // Z Clearance between probe points
+#define Z_CLEARANCE_MULTI_PROBE     Z_HOMING_HEIGHT / 2 // Z Clearance between multiple probes
 #define Z_AFTER_PROBING           	Z_HOMING_HEIGHT // Z position after probing is done
 
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping

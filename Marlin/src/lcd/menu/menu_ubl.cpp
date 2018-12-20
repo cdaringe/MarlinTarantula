@@ -319,6 +319,8 @@ void _lcd_ubl_build_mesh() {
   #if HAS_HEATED_BED
     MENU_ITEM(gcode, MSG_UBL_BUILD_MESH_M1, PSTR(
       "G28\n"
+      "M140 S" STRINGIFY(PREHEAT_1_TEMP_BED) "\n"
+      "M104 S" STRINGIFY(PREHEAT_1_TEMP_HOTEND) "\n"
       "M190 S" STRINGIFY(PREHEAT_1_TEMP_BED) "\n"
       "M109 S" STRINGIFY(PREHEAT_1_TEMP_HOTEND) "\n"
       "G29 P1\n"
